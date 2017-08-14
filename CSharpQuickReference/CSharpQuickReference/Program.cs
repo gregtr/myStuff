@@ -123,6 +123,15 @@ namespace CSharpQuickReference
             names = new string[1];
             names[0] = "TestString";
 
+            /**********************************************
+             * Classes
+             ***********************************************/
+            CustomClass1 classObject = new CustomClass1();
+            Console.WriteLine(classObject.Describe());
+            Console.WriteLine(classObject.Color); //// TODO - read bout this
+            string tempString = classObject.Color = "test";
+            Console.WriteLine(tempString);
+
             // TODO - check all major classes and functions - like class Object and just do some random stuff with it
             Console.ReadLine();
         }
