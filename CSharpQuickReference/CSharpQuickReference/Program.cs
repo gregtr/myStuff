@@ -8,6 +8,7 @@ namespace CSharpQuickReference
     {
         static void Main(string[] args)
         {
+            //TODO - main classes and methods, using's + all those files in VS - like Events etc ++ know how in Visual studio
             Console.WriteLine("Hello, World!");
 
             /**********************************************
