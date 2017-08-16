@@ -39,6 +39,7 @@ namespace CSharpQuickReference.src
         public structEntity(string color)
         {
             this.color = color;
+            this.Color = color;
         }
 
         public string Describe()
