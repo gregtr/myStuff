@@ -24,6 +24,7 @@ namespace CSharpQuickReference.src
         public string majento;
         public static void getDefStructor()
         {
+
             // can use static fields in static method
            // newstr2.Describe(); // object reference is required for non static method , field or property
             Console.WriteLine(newStruct.Describe()); 
