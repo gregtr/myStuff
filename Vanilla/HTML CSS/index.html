@@ -226,10 +226,105 @@ Oh, bring back my Bonnie to me.
 	<samp>Output from a program or computing system  - same as eariel</samp>
 	<var>variable</var>
 	<hr>
-	<form>
-	/ 
-	form elements
-	/
+	<form action="/action_page.php" method="get" oninput="x.value=parseInt(a.value)+parseInt(b.value)"><!-- or post - if sensitive information -->
+		<input type="text" value="Defvalue"><br>
+		<fieldset>
+		<legend> Radio buttons </legend>
+		<input type="radio" name="nameEssentialForSubmit" value="MousE" checked><br>
+		<input type="radio" name="nameEssentialForSubmit2" value="MousE2"><br>
+		</fieldset>
+		
+		<select name="cars">
+			<option value="volvo">VOLVO</option><!-- bydefault first element is selected-->
+			<option value="descarde">DESCARDE</option>
+		</select>
+		
+		<textarea name="message" rows="10" cols="20">
+			Just a textmessage box.
+		</textarea>
+		<button type="button" onclick="alert('Hello World!')">Clickable element!</button>
+		
+		<!-- HTML 5 form elements -->
+		<!-- datalist, keygen output -->
+		<!-- <datalist> element specifies a list of pre-defined options for an ninput element -->
+		<input list="browsers">
+		<datalist id="browsers">
+		  <option value="internet explorer">
+		  <option value="firefox">
+		  <option value="chrome">
+		  <option value="opera">
+		  <option value="safari">
+		</datalist>
+		
+		<!-- Keygen - secure wayt to authenticate users - specifies a key-pair generator field in a form  - when form is submitted two keys are genereated - one private and second public.
+		private key is stored locally, public is sent to the server - public key could be used to generate a client certificate to authenticate te suer in the future./-->
+		Username: <input type="text" name="user">
+		Encryption: <keygen name="security">
+		
+		<!-- output - result represented by a calculation ( like one performed by a script ) -->
+		<input type="range" id="a" name="a" value="50">
+		<input type="number" id="b" name="b" value="50">
+		<output name="x" for="a b">100</output>
+		<br>
+		<input type="password" name="osw">
+	<!-- html5 input types -->
+	<!--color
+date
+datetime-local
+email
+month
+number
+range
+search
+tel
+time
+url
+week-->
+ <input type="color" name="favcolor">
+ <input type="date" name="bday">
+ <input type="date" name="bday" max="1979-12-31"><br>
+ <input type="datetime-local" name="bdaytime">
+ <input type="email" name="email">
+ <input type="month" name="bdaymonth">
+ <input type="number" name="quantity" min="1" max="5">
+ <input type="range" name="points" min="0" max="10">
+ <input type="search" name="googlesearch">
+ <!-- not in firefox -->
+  <input type="time" name="usr_time">
+  <input type="week" name="week_year">
+  <!-- not in safari -->
+  <input type="url" name="homepage">
+ <!-- only safari -->
+ <input type="tel" name="usrtel">
+ <!-- input attributes -->
+ <!-- value, readonly disabled  size , maxlength-->
+ <!-- HTML5 Attributes -->
+ <!-- autocomplete
+autofocus
+form
+formaction
+formenctype
+formmethod
+formnovalidate
+formtarget
+height and width
+list
+min and max
+multiple
+pattern (regexp)
+placeholder
+required
+step
+and the following attributes for <form>:
+
+autocomplete
+novalidate 
+
+TEST THEM https://www.w3schools.com/html/html_form_attributes.asp
+ -->
+
+		<input type="reset">
+		<input type="submit" value="Submit"><br>
 	</form>
   </body>
 </html>

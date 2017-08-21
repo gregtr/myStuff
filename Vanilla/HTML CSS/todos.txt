@@ -1,0 +1,46 @@
+What is HTML
+	- standard markup language for creating Web pages.
+	- Hyper Text Markup Language
+	- html elements are represented by tags - that are rendered by browser 
+	
+<!Doctype> 
+	- declaration of <!DOCTYPE> represents the document type, and help 
+		browsers to display web pages correctly.
+	- it's not case sensitive
+	- declaration for HTML5 is <!DOCTYPE html>
+	
+	--- Tips 
+		all html tags are not case sensitive - <p> == <P>
+		html5 standard doesn't require quotes over attribute values - but it demands quotes for stricter document types like xhtml
+	
+	--- Questions:
+		- what are "necessary" tags we need to render the page
+		- what are differences between p and div - http://htmldog.com/guides/html/intermediate/spandiv/
+		https://stackoverflow.com/questions/16434706/what-is-the-difference-between-p-div-and-span-in-htmlxhtml
+		
+		language-dialect
+		en-US
+		---- <html lang="en-US"> -> where lang is an attribute
+		
+		<div><div></div> gdzie inner div jako text
+		what is a frame orr iframe
+		
+		Web Pages
+		Images
+		Style Sheets
+		JavaScripts
+		charset utf-8
+		meta authro - is it necessary
+		more http-equiv values?
+		viewport
+		
+		on details and elements http://www.hongkiat.com/blog/html5-details-summary-tags/
+		
+		http://www.hongkiat.com/blog/animated-particles-js/
+		
+		common html entities and symbols
+		
+		https://www.w3schools.com/html/html_urlencode.asp !!!
+		
+		
+		browsers do not display unknow elemetns 
