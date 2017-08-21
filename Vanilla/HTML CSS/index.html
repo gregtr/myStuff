@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head><!-- container for metadata -->
+	<title>Page Title</title> <!-- title in browser tab, title for the page when added to favorites, displays a title for the page in search engine results -->
+  
+	<style></style>
+	<link rel="stylesheet" href="/styles/styles.css">
+	<!-- metadata is used by browsers - how to display content, by search engines ( keywords ) and other web services -->
+	
+	<!-- define charset for the page -->
+	<meta charset="UTF-8">
+	<!-- Define a description of the web page -->
+	<meta name="description" content="Demo site ">
+	<!-- Define keywords for search engines -->
+	<meta name="keywords" content="HTML, CSS, XML, JavaScript, Styles">
+	<!-- Author of the page -->
+	<meta name="author" content="Grzegorz Trzeciak">
+	<!-- Refresh document every 30 seconds -->
+	<meta http-equiv="refresh" content="30">
+	
+	<!-- HTML5 - allows web designers to take control over the viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- bae - specifies the base url and base target for all relative urls in a page 
+	<base href="http://www.w3schools.com/images/" target="_blank">-->
+	
+	<!-- in html5 html, body and head can be omitted - we should not omitt html and body, but head is relatively safe -->
+  </head>
+  
+  <body>
+	<h1>Header</h1>
+	<h2>Smaller Header</h2>
+	<h3>Even smaller header</h3>
+	<h4>way smaller header</h4>
+	<h5>even smaller than way smaller header</h5>
+	<h6>smallest header of them all header</h6>
+	<p title="Tooltip message when hovered">Hover over me - the paragraph.</p> <!-- displays in a single line -->
+	<a href="#">I'm a link - awesome isn't it?</a>
+	<img src="path+filename.format" alt="I'm a image" width="100" height="100"> <!-- in pixels -->
+	<br> 
+	<hr>
+	<p>the "hr" tag defines a thematic break in a html page - horizontal rule.</p> 
+	
+	<pre>
+	  My Bonnie lies over the ocean. 
+  My Bonnie lies over the sea.
+
+	  My Bonnie lies over the ocean.
+Oh, bring back my Bonnie to me.
+	</pre> <!-- preformatted text, prevents spaces and linek breaks -->
+	<!--[if IE 9]>
+		<p>.... some HTML here ....</p>
+	<![endif]-->
+	<hr>
+	<div>
+	<b>Bold</b><!-- a style-->
+	<strong>Important text</strong><!-- indication of how something should be understood -->
+	<i>italic text</i>
+	<em> emphasized text</em>
+	<mark>marked text</mark>
+	<small> small text </small>
+	<del>deleted text</del>
+	<ins>inserted text</ins>
+	<sub>subscript</sub>
+	<sup>superscript</sup>
+	<q>quotation</q><!-- short quotation -->
+	<blockquote cite="http://www.worldwildlife.org/who/index.html">
+		For 50 years, WWF has been protecting the future of nature.
+	The world's leading conservation organization,
+	WWF works in 100 countries and is supported by
+	1.2 million members in the United States and
+	close to 5 million globally.
+		</blockquote><!-- section that is quoted from another source -->
+		<abbr title="World Health Organization">WHO_abbrevation/acronym</abbr>
+		<address>
+			Written by Me<br>
+			Elm st.<br>
+			01211241<br>
+			USAS<br>
+		</address>
+		<p><cite>The masacrator</cite> by Me</p>
+		<bdo dir="rtl">From righ to left.</bdo><!-- bi-directional override -->
+	</div>
+	<hr>
+	<a href="url"> link text </a><!-- works even with local files -->
+	<a href="#" target="_blank">Target Blank - opens in a new window or tab</a><br>
+	<a href="#" target="_top">Target Top - opens in the full body of the window</a><br>
+	<a href="#" target="_self">Target Self- default  - opens in the same window/tab</a><br>
+	<a href="#" target="_parent">Target Parent - opens in the parent frame</a><br>
+	<!-- theres also target="framename" - opens in a named frame
+	<!--
+	Image as link	<a><img></a>
+	
+	or to bookmarks -> #IDofElement or to another page id html_demo.html#ID
+	-->
+	<hr>
+	<!-- image maps - image  with clicable areas -->
+	<img src="content/images/demo.png" alt="Demo.png" usemap="#demoPlanetMap" style="width:145px;height:130px;">
+	<map name="demoPlanetMap">
+		<area shape="rect" coords="0,0,145,30" alt="Sun" href="sun.htm">
+		<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm"><!-- size of 3 hieght and width -->
+		<area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+	</map>
+	<hr>
+	<table style="width:100%">
+		<tr>
+			<th>FirstRow</th>
+			<th>SecondRow</th>
+			<th colspan="2">Age</th>
+		</tr>
+		<tr>
+			<td>A1</td>
+			<td>B1</td>
+			<td>C1</td>
+			<td>C1</td>
+		</tr>
+		<tr>
+			<td>A2</td>
+			<td>B2</td>
+			<td>C2</td>
+		</tr>
+	</table>
+	
+	<table style="width:100%">
+	  <caption>Monthly Gates</caption>
+	  <tr>
+		<th>Name:</th>
+		<td>Bill Gates</td>
+	  </tr>
+	  <tr>
+		<th rowspan="2">Telephone:</th>
+		<td>55577854</td>
+	  </tr>
+	  <tr>
+		<td>55577855</td>
+	  </tr>
+	</table>
+	
+	<hr>
+	<p>Lists</p>
+	<!-- Unordered HTML List -->
+	<ul>
+	  <li>Tea</li>
+	  <li>Coffee</li>
+	  <li>Fifa</li>
+	</ul>
+	<ul>
+  <li>Coffee</li>
+  <li>Tea
+    <ul>
+      <li>Black tea</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Milk</li>
+</ul>
+	<!-- ordered HTML List -->
+	<ol type="I"> 
+	<!-- 
+	type="1" - default - numbered with numbers( default) 
+	type="A" - with uppercase letters
+	type="a" - with lowercase letters
+	type="I" - with uppercase roman numbers
+	type="i" - with lowercase roman numbers -->
+	
+	  <li>Tea</li>
+	  <li>Coffee</li>
+	  <li>Fifa</li>
+	</ol>
+	<!-- description lists -->
+	<!-- list of terms with description of each term -->
+	<dl>
+		<dt> Coffee</dt>
+		<dd> - black hot cup of personality </dd>
+		<dt> Milk</dt>
+		<dd> - Cow;'s piss...</dd>
+	</dl>
+	<hr>
+	<p> Blocks and inline elements </p>
+	<!-- block level elements - alwayts starts on a new line and take sup the full width available -->
+	<p>Block Elements:  div , h1-h6, p, form </p>
+	<br>
+	<div>
+		Div - most used container stroing other HTML elements
+		Span - often used as a container for some text
+	</div>
+	
+	<hr>
+	<p>iframes</p>
+	
+	<iframe src="URL"></iframe><!-- for displaying page within a web page -->
+	<div id="demo"></div>
+	<script>
+		document.getElementById("demo").innerHTML = "Hello demo";
+	</script>
+	<noscript>Sorry, your browser does not support JavaScript!</noscript>
+	<!--<div id="demo"></div>  wont work cus script is invoked before this element -->
+	<hr>
+	<div>
+		picture.png - is located in the same folder as the current page <br>
+		images/picture.png - is located in the images folder located in the current page <br>
+		/images/picture.png - is located in the images folder located at the root of current web <br><!-- best practice fo use relative  -->
+		../picture.png - is located in the folder on elevel up from the current folder <br>
+	</div>
+	<hr>
+	<pre>
+	&lt;header&gt; - defines a header for a document or a section
+	&lt;nav&gt; - defines a container for navigation links
+	&lt;section&gt; - sefines a section in a document
+	&lt;article&gt; - defines an independant self-contained article
+	&lt;aside&gt; - sidebar
+	&lt;footer&gt; - footer
+	&lt;details&gt; - additional details
+	&lt;summary&gt; - heading for the details element
+	</pre>
+	
+	<hr>
+	
+	<!-- computer code -->
+	<code>
+	x = 5;<br>
+	y = 6;<br>
+	z = x+y<br>
+	</code> <!-- dispalyed in browser default monospace font -->
+	<!-- keyboard input -->
+	<p> Save the document by pressing <kbd>Ctrl + S</kbd> displayed in default monospace font</p>
+	<samp>Output from a program or computing system  - same as eariel</samp>
+	<var>variable</var>
+	<hr>
+	<form>
+	/ 
+	form elements
+	/
+	</form>
+  </body>
+</html>
