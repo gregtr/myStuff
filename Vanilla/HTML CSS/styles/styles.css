@@ -1,0 +1,251 @@
+/* This is my sample style page */
+/*
+Box model :
+Margin-(outline)-border-padding-content
+
+width: only size of content area
+
+outline is not a part of an elements dimensions - the elements total
+width and heigt is not affected by the width of the outline.
+
+--? em? how to calculate those values
+
+----------------------------------------
+
+body { background-color: red; font-size: 12px; }
+
+	body 			 -> selector - points the html element we want to style
+	background-color -> property		 
+	red				 -> value			
+	property: value  -> declaration 	
+
+	external, internar style and inline style
+	
+	Cascading order  by priority
+		1. inline style - inside a html element
+		2. external and internal style sheets - in  the head section
+		3. browser default
+		
+		Color : color name, rgb value, hex value
+*/
+body {background-color: #ddd;}
+p {text-align: center;}
+
+/*CSS background properties: ( order as in shorthand )
+	background-color
+	background-image 
+	background-repeat
+	background-attachment
+	background-position
+*/
+p {background-color: lightgray;}
+h1 {background-color: lightblue;}
+div {background-color: white;}
+
+#demo {
+  background-image: url("content/images/favicon.ico");
+  background-repeat: repeat-x;
+  background-position: right top;
+  background-attachment: fixed;
+}
+#demo { /* shorthand property */
+  background: red url("image") no-repeat right top;
+}
+/*CSS Border-style
+	dotted - dotted border
+	dashed - dashed border
+	solid  - solid border
+	double - double border
+	groove - 3d groved border - effect depends on border color value
+	ridge  - 3d ridge border - -//-
+	inset  - 3d inset border - -//-
+	outset - 3d outset border - -//- 
+	nonce  - no border
+	hidden - hidden border 
+	
+	It can have from 1 to 4 values ( top , right, bottom and left border )
+*/
+h1,h2,h3,h4,h5,h6 {border-style: inset;}
+div {border-style:dotted;}
+
+/*CSS border propertes 
+ border-width
+ border-style (required)
+ border-color 
+*/
+h1 {border-width: medium;}
+h2 {border-width: 5px;}
+div {border-width: 2px 10px 5px 15px;} 
+
+div {border-color: red;}
+h3 {border-color: #ddccc1;}
+
+h4 {border-right-color: black;}
+
+h5 {border: 20px solid gray;}
+h1 {border: solid black 10px;}
+
+div {
+  border: 1px solid black;
+  border-radius: 5px; /* not supported in ie8 and earlier */
+}
+/*CSS Margins
+  used to generate space around elements 
+  
+  auto - takes specifc width and remaining space is equally divided between left and right
+  inherit - inherit from the parent
+*/
+div {margin: 5px; margin-left: 10px;}
+
+/*CSS PAdding
+  space around content - clears area around the content ( inside the border) of an element. Can't be negative value.
+*/
+p {padding: 5px;}
+
+/*CSS Height + Width 
+  by default it's set to auto 
+  it can take values as cm, px, %-of container etc.
+*/
+div {width:600px; height:250px;}
+/*
+  max-width/max-height - set's a maximum width/height of an element - it's specified in length values or %
+  By default it's none
+  
+  on div ( width:500px } it will add a scrollbar on mobiles- to avoid that we can set our max width to 500px
+*/
+div {max-width:600px;}
+
+/*CSS Outline-style
+   same as border values
+   outline-width: default medium;
+*/
+div {outline-style: solid; outline-color: yellow;}
+
+/*CSS Text formatting - play with those!!!
+ color: red/hex/rgb - for w3c compilant css if we define color we need to define background-color
+ text-align - left/right/centered/justified
+ text-decoration: none, overline, line-through, underline
+ text-transformation: uppercase, lowercase, capitalize
+ text-indentation: length-value - specifyt the indentation of the first line of a text
+ letter-spacing: length-value 
+ line-height: length-value
+ direction - rtl - for text direction
+ word-spacing: length-value
+ text-shadow ( horizontal shadow) (vertical shadow position) color:
+ text-overflow - *clip/ellipsis/string/initial/inherit
+ unicode-bidi - normal /embed/ bidi-override / initial/inherit - used with direction - to set or return whether the text should be overriden to support mulitple languages in same document
+ 
+ vertical-align - baseline/length/&/sub/super/top/text-top/middle/bottom/text-bottom/initial/inherit
+ 
+ white-space -normal/nowrap/pre/pre-line/pre-wrap/initial/inherit
+ 
+ word-spacing - normal, length/initial / inherit
+*/
+#TODO {}
+
+/*CSS FONTS */
+/*
+ in css there are two types of font family names: generic family, ( serif , monospace) and font-family - a specific font famiy like "Arial" -- Monospace characters have the same width ---- sans means without
+*/
+/* .... hmm fontface vs font */
+p { font-family: "Times New Roman", Times, serif;}
+p { font-style:normal;} /* normal/italic/oblique */
+/* font-size  -
+	we shouldn't use font-size so our headings looke like paragraphs and vice-versa ... its not a good thing
+	
+	font-size can be absolute or relative size
+		absolute is good when we want static sieze and we know the exact size of output
+		relative to surrouding elements - allows user to change text size in browser 
+		
+		default -> 16px = 1em
+		
+		em unit is recommended by w3c 
+		1em is equal to current font-size - the default font-size is 16px
+		pixels/16 = em
+		
+		still with ie there's a problem - its smaller than it should and larget than we anticipate
+*/
+p {font-size:1.5em;}
+
+h1{font-size:2.5em; /* 40px/16=2.5em */}
+h2{font-size:1.875em; /* 30px/16=1.875em */ }
+p {font-size: 0.875em; /* 14px/16=0.875em */}
+
+/* best solutioon */
+body {font-size:100%;} 
+h1 {font-size:2.5em;}
+/* and now it works for all browsers :D and allows us to zoom and do other amazing stuff */
+
+h1 {font-weight: bold;}
+p {font-weight:normal;}
+
+/* font-variant - specifies whether or not a thext should be displayed in a small caps font - all smaller converted to uppercase but with smaller font than normal uppercase */
+h2 { font-variant: small-caps; }
+
+/* font-awesome is a icon lib : ) -- we add class to inline element <i> or<span> - in font awesome all icons are in scallable vectors - so we can modify them ( same with google icons and bootstrap icons ) */
+
+/*CSS LInkes  and zeldas */
+a { color: purple; }
+a:link { color:white;} /*normal, unvisited link*/
+a:visited {color:green;}
+a:hover { color: blue;}  /*MUST COME AFTER LINK AND VISITED*/ 
+a:active {color:red;}  /*selected link - MUST COME AFTER HOVER*/
+
+a:link {text-decoration:none;}
+a:hover {text-decoration:underline;}
+
+a:visited{background-color: lightgreen;}
+
+/*CSS Lists  */
+/* position the list item markers - list-style-position - specifies whether the list item markers should appear inside or outside the content flow*/
+ul {list-style-position: inside;}
+/*Removing default settings*/
+ul {
+  list-style-position: none;
+  margin: 0;
+  padding: 0;
+}
+/*list style shorthand
+  list-style: list-style-type list-style-position list-style-image;
+*/
+ul {
+  list-style: square inside url("image-as-list-item-marker");
+}
+
+/*CSS Display property*/
+/* most important proerty in css for controlling layout - default value is block/inline */
+/*Block -Level elements
+	div
+	h1-h6
+	p
+	form
+	header
+	footer
+	section
+*/
+
+/* Inline elements - does not start on a new line and only takes up as much width as necessary
+	span
+	a
+	img
+*/
+
+/* to hide element we can use display:none - page will be displayed with that element as it was not there
+	visibility:hidden also does the same thing but it will affect the layout - still will take as much space as it took.....
+	
+	display: none -> no element visibility:hidden -> opacity 0
+
+	block elements take full width available - but we can prevent by adding width value... and margin auto to be on center -> margin will streatch to sides as far as it can 
+	*/
+	
+	/* Position property - positioning method for an element
+	
+		static
+		relative
+		fixed
+		absolute
+	
+		html elements are positione static by default - are not affected by top-bottom-left-right properties
+		and its position normally to the current page flow
+	
+	*/

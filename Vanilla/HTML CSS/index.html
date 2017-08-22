@@ -2,9 +2,12 @@
 <html lang="en-US">
   <head><!-- container for metadata -->
 	<title>Page Title</title> <!-- title in browser tab, title for the page when added to favorites, displays a title for the page in search engine results -->
+  <!-- difference between /url/ and url/ and /url   0--- mirror site idea :D
+	<!-- logo -->
+	<link rel="shortcut icon" type="image/x-icon" href="content/images/favicon.ico" />
   
 	<style></style>
-	<link rel="stylesheet" href="/styles/styles.css">
+	<link rel="stylesheet" href="styles/styles.css"> <!-- /url -> tries to find /C:/styles -->
 	<!-- metadata is used by browsers - how to display content, by search engines ( keywords ) and other web services -->
 	
 	<!-- define charset for the page -->
@@ -326,5 +329,308 @@ TEST THEM https://www.w3schools.com/html/html_form_attributes.asp
 		<input type="reset">
 		<input type="submit" value="Submit"><br>
 	</form>
+	
+	
+	<br><br><hr><br><br>
+		<!-- Diving into HTML5 -->
+		<!-- new semantic elements : <header>< footer>< article> <section>
+			 new graphic elements : <Svg> <canvas> and multimedia elements <audio> <video> -->
+			
+		<!-- M<ost interesting APIS for HTML5 :
+			Geolocation
+			Drag and Drop
+			Local Storage
+			Application cache
+			Web workers
+			SSE 
+		-->
+		
+		<!-- HTML 5 is supported by all modern browsers - and we can teach older to handle html5 correctly -> all uncrecognized elements are handled as inline elements-->
+		
+		<!-- HTML5 defines eight new semantic elements. All these are block-level elements.
+
+To secure correct behavior in older browsers, you can set the CSS display property for these HTML elements to block:
+header, section, footer, aside, nav, main, article, figure {
+    display: block; 
+}
+
+
+You can also add new elements to an HTML page with a browser trick.
+<script>document.createElement("myHero")</script>
+  <style>
+  myHero {
+      display: block;
+      background-color: #dddddd;
+      padding: 50px;
+      font-size: 30px;
+  } 
+  </style> 
+This example adds a new element called <myHero> to an HTML page, and defines a style for it:
+<myHero> Some text </myHero>
+The JavaScript statement document.createElement("myHero") is needed to create a new element in IE 9, and earlier.
+
+for ie8 and earlier we use HTML5Shiv - cus they don't display unknown elements
+<!--[if lt IE 9]>
+    <script src="/js/html5shiv.js"></script>
+  <![endif]-- > /// https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js
+-->
+	<h1> HTML5 <sub> Dive deeper </sub> </h1>
+		
+		<!-- semantic -tells about the content : <form> <table> <article> - non semantic ( no info ) - <span> <div> -->
+		
+		<section> <!-- thematic goruping of a content typically with a heading eh: introduction, content, contatct information-->
+			<h4> WWF </h4>
+			<p> The World Wide Fund for nature is just a ... </p>
+		</section>
+		
+		<article><!-- self contained independent content : blog post, forum post, news article -->
+			<h4>Masacrator of dreams</h4>
+			<p>
+				Just random gibberish.. i should use lorem ipsum but who cares?...
+			</p>
+		</article>
+		
+		<section>
+			<header> <!-- specifies a header for a document or section -->
+				<h3>Header</h3>
+				<p> used for introductory content, we can have several header elements in one doc </p>
+			</header>
+			<p>
+				Lorem ipsum...
+			</p>
+			<footer>
+				<p> footer should contain information about its containing element, eg. euthor , copyright info , links to terms of use , contact info etc. We can have multiple in on file.
+				</p>
+			</footer>
+		</section> 
+		
+		<nav> <!-- automatically set them horizontally -->
+			<a href="/html/">HTML</a> |
+			<a href="/css/">&lt;Custom></a> |
+			<a href="/js/">JavaScript</a> |
+		</nav>
+		
+		<aside>
+			<!-- content in sidebar : should be related to surrouding content -->
+			<h6>Small aside </h6>
+			<p> Loredm indus...</p>
+		</aside>
+		
+		<figure> <!-- add visual explanation to an image -->
+		<img>
+		<figcaption>Fig1. - the empty image element</figcaption>
+		</figure>
+	
+		<!-- article section div 
+			iin standard of html5 -> section element is defined as a block of related elements--
+			
+			the article element is defined as a complete, self-contained block of related elements
+			
+			div - block of children elements
+			
+			
+			Closing empty elements is optional - but its required in xhtml and xml:lang
+			<meta charset="utf-8" />
+		-->
+		
+		<!-- 
+		
+		Always add the "alt" attribute to images. This attribute is important when the image for some reason cannot be displayed. Also, always define image width and height. It reduces flickering because the browser can reserve space for the image before loading.
+		-->
+		
+		<!---
+		
+		
+		
+		In the HTML5 standard, the <head> tag can also be omitted.
+
+By default, browsers will add all elements before <body>, to a default <head> element.
+
+You can reduce the complexity of HTML, by omitting the <head> tag:
+
+	--- but its not popular still, so its better not to ommit it 
+
+-->
+<!-- Canvas - rectangular area on html page - without border and content on the start -->
+
+<canvas id="myCanvas" width="200", height="100"></canvas>
+<script> /* nauczyć się tego - bo czesto wykorzystywane  -bitmap*/
+	var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+</script>
+<!-- svg- scalable vector graphics -->
+	<svg width="100" height="100">
+	<circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+	</svg>
+<!-- Differences - svg and canvas -
+	svg - describs 2d graphics in xml 
+		every element is available in xml dom - we can attach handlers for an element via js
+			- all elements of svg are objects
+	canvas -draws 2d graphic on the fly
+		rendered pixel by pixel, once drawn its turn to static ( svg is dynamic in that regard ) if image needs to be changed - entire scene needs to be redrawn 
+		
+		-->
+		<hr>
+		<h2> Google Maps </h2>
+
+		<div id="map" style="width:500px;height:500px;">My Awesome GOOGLE MAP </div>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+		<script>
+			function myMap() {
+				var mapOptions = {
+				  center: new google.maps.LatLng(51.5, -0.12),
+				  zoom: 10,
+				  mapTypeId: google.maps.MapTypeId.HYBRID
+				}
+				var map = new google.maps.Map(document.getElementById("map"),
+				mapOptions);
+			}
+		</script>
+		
+		<hr> 
+		<h4> Multimedia </h4>
+		<!-- Video Formats : mpeg, avi, wmv, quicktime, realvideo, flash, *ogg, *webm, mpeg-4, *mp4 -->
+		<!-- Audio formats : midi, realaudio, wma, aac, *wav, *ogg, *mp3, mp4 -->
+		<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<audio controls>
+  <source src="horse.ogg" type="audio/ogg">
+  <source src="horse.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+		<hr>
+		<h4>HTML Helpers (Plug-ins)</h4>
+		<p>Helper applications (plug-ins) are computer programs that extend the standard functionality of a web browser. Examples of well-known plug-ins are Java applets.</p>
+		<p>Plugins can be add to web pages with the object tag or the embed tag.</p>
+		<br>
+		<p>Object elemetn is supported by all browsers, it defines an embedded object within an HTML document - it is used to embed plugin-s like java applets, pdf readers, flash players.</p>
+		<br>
+		<h6>Examples</h6>
+		<object width="400" height="50" data="bookmark.swf"></object>
+		<object width="100%" height="500px" data="snippet.html"></object>
+		<object width="100%" height="500px" data="snippet.html"></object>
+		<br>
+		<p>The embed element is supported by all major browsers - it also defines an embedded object within an html document.</p>
+		<h6>Examples</h6>
+		<embed width="400" height="50" src="bookmark.swf">Alt text </embed>
+		<embed width="100%" height="500px" src="snippet.html">
+		<embed src="audi.jpeg">
+		
+		<hr>
+		<h4>Youtube videos</h4>
+		  <iframe width="420" height="300" src="https://www.youtube.com/embed/Dic-Kw1zlkc"></iframe>
+		<hr>
+		<h5>Geolocation</h5>
+		<br>
+		<p>Geolocation is used to get the geographical position of a user. Since it compromise privacy - user need's to grand permission - It's most accurate for devices with build GPS.(on chorome 50. and above we need to use https)</p>
+		<button onclick="getLocation()">Try It</button>
+
+		<p id="demo"></p>
+		<script>
+		  var x = document.getElementById("demo");
+		  function getLocation() {
+		    if(navigator.geolocation) {
+			  navigator.geolocation.getCurrentPosition(showPosition, showError); /* error function is optional*/
+			} else {
+			  x.innerHTML = "Geolocation is not supported by this browser.";
+			}
+		  }
+		  function showPosition(position) {
+		    x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+		  }
+		  /* Handling errors and rejections */
+		  function showError(error) {
+			switch(error.code) {
+				case error.PERMISSION_DENIED:
+					x.innerHTML = "User denied the request for Geolocation."
+					break;
+				case error.POSITION_UNAVAILABLE:
+					x.innerHTML = "Location information is unavailable."
+					break;
+				case error.TIMEOUT:
+					x.innerHTML = "The request to get user location timed out."
+					break;
+				case error.UNKNOWN_ERROR:
+					x.innerHTML = "An unknown error occurred."
+					break;
+			}
+		}
+		  
+		</script>
+		
+		<hr>
+		<h4>Drag n Drop </h4>
+		 
+		<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style=" width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;"></div>
+
+		<img id="drag1" src="content/images/HangingMan.png" draggable="true"
+		ondragstart="drag(event)" width="336" height="69">
+		  
+		  <script>
+		  function allowDrop(ev) {
+				ev.preventDefault();
+			}
+
+			function drag(ev) {
+				ev.dataTransfer.setData("text", ev.target.id);
+			}
+
+			function drop(ev) {
+				ev.preventDefault();
+				var data = ev.dataTransfer.getData("text");
+				ev.target.appendChild(document.getElementById(data));
+			}
+		  </script>
+		  
+		  <!-- local storage -->
+		  <!-- store data locally within user borwser ~5MB and info is never transfered to server and its per origin - ale pages can store on origin-->
+		  
+		  <!-- window.localStorage- no expiration date
+			   window.sessionStorage - one session ( until tab closed ) -->
+			   
+			   <!-- web worker - is a javascript that runs in the background independently of other scripts,
+			   without affecting the performacne fo the page - we can continue to do other stuff -->
+			   
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button> 
+<button onclick="stopWorker()">Stop Worker</button>
+
+<p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
+
+<script>
+var w;
+
+function startWorker() {
+    if(typeof(Worker) !== "undefined") {
+        if(typeof(w) == "undefined") {
+            w = new Worker("demo_workers.js");
+        }
+        w.onmessage = function(event) {
+            document.getElementById("result").innerHTML = event.data;
+        };
+    } else {
+        document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Workers...";
+    }
+}
+
+function stopWorker() { 
+    w.terminate();
+    w = undefined;
+}
+</script>
+
+<!-- server sent events - SSE - one way messaging  -is when a web page get automaticall updates from the server --> <!-- find good example https://www.w3schools.com/html/html_examples.asp  https://www.w3schools.com/html/exercise.asp-->
+			   <!-- then do some bootstrap 3  , graphics and icons - after css vanilla and sass lass -->
+		
   </body>
 </html>
