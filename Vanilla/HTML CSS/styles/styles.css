@@ -249,3 +249,660 @@ ul {
 		and its position normally to the current page flow
 	
 	*/
+
+/*
+	Overflow:  works only with block elements with specified height
+		visible	- default - overflow is not clipped it renders outside the element's box
+		hidden	- overflow is clipped and rest of the content will be invisible
+		scroll	- overflow is hidden but scroll bar is add to we can see rest of the content
+		auto	- if overflow is clipped - scrollbar should be added
+*/
+
+/*
+ float : - specifeis whether or not an element should float
+ clear: - property is used to control the behaviour of floating elements
+
+	inline-block - creates a grid of boxes that fills the browser width and wraps nicely ( when the browser is resized) by using the float proeprty
+ 
+*/
+.floating-box {
+  float: left;
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  border: 3px solid #000;
+}
+.after-box {
+  clear: left;
+}
+
+.floating-box-inlineExample {
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  border: 3px solid #000;
+}
+
+/*
+	CSS Align
+*/
+/* Center align elements - horizontally*/
+.center {
+  margin: auto;
+  width: 50%;
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+}
+img.center {
+  display: block;
+  margin: auto;
+  width: 40%;
+}
+
+/* Absolute position are removed from normal flow and can overlap elements
+
+Tip: When aligning elements with position, always define margin and padding for the <body> element. This is to avoid visual differences in different browsers.
+
+There is also a problem with IE8 and earlier, when using position. If a container element (in our case <div class="container">) has a specified width, and the !DOCTYPE declaration is missing, IE8 and earlier versions will add a 17px margin on the right side. This seems to be space reserved for a scrollbar. So, always set the !DOCTYPE declaration when using position:
+
+*/
+.right {
+  position: absolute;
+  right: 0px;
+  width: 300px;
+  border: 2px solid #123123;
+  padding: 5px;
+}
+
+/* Center vertically using padding */
+.center-padding {
+  padding: 70px 0;
+  border: 3px solid green;
+  height: auto;
+}
+/* center using line height */
+.center-ver-lineHeight {
+    line-height: 200px;
+    height: 200px;
+    border: 3px solid green;
+    text-align: center;
+}
+/* If the text has multiple lines, add the following: */
+.center-ver-lineHeight p {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+/* Center Vertically - Using position & transform */
+.center-trans { 
+    height: 200px;
+    position: relative;
+    border: 3px solid green; 
+}
+
+.center-trans p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/** 
+	Combinators - something.... that explains the relationship between the selectors.
+	in CSS3
+		- desendant selector (space)
+		- child selector (>)
+		- adjacent sibling selector (+)
+		- general sibling selector (~)
+
+		1. Descendant selector - matches all elements that are descendants of a specified element.
+		2. Child selector - selects all elements that ar the immediate children of a specified element.
+		3. Adjacent sibling selector - selects all elements that are the adjacent siblings of a specified element. ( immediately following ) - they need to have same parent element
+		4.General sibling selector - selects all elements that are siblings of a specified element
+**/
+
+div img {
+  background-color: #fff;
+}
+div > img {
+  background-color: pink;
+}
+div + p {
+  background-color: lightgreen;
+}
+div ~ p {
+  background-color: purple;
+}
+
+/*
+ selector:pseudo-class {
+   property: value;
+ }
+ 
+ first child  - :first-child
+ 
+ lang pseudo class
+ - let us to define special rules for diff languages
+ 
+ pseudo-elemets : )
+ ::after	p::after	Insert content after every <p> element
+::before	p::before	Insert content before every <p> element
+::first-letter	p::first-letter	Selects the first letter of every <p> element
+::first-line	p::first-line	Selects the first line of every <p> element
+::selection	p::selection	Selects the portion of an element that is selected by a user
+ ----------------------
+ :active	a:active	Selects the active link
+:checked	input:checked	Selects every checked <input> element
+:disabled	input:disabled	Selects every disabled <input> element
+:empty	p:empty	Selects every <p> element that has no children
+:enabled	input:enabled	Selects every enabled <input> element
+:first-child	p:first-child	Selects every <p> elements that is the first child of its parent
+:first-of-type	p:first-of-type	Selects every <p> element that is the first <p> element of its parent
+:focus	input:focus	Selects the <input> element that has focus
+:hover	a:hover	Selects links on mouse over
+:in-range	input:in-range	Selects <input> elements with a value within a specified range
+:invalid	input:invalid	Selects all <input> elements with an invalid value
+:lang(language)	p:lang(it)	Selects every <p> element with a lang attribute value starting with "it"
+:last-child	p:last-child	Selects every <p> elements that is the last child of its parent
+:last-of-type	p:last-of-type	Selects every <p> element that is the last <p> element of its parent
+:link	a:link	Selects all unvisited links
+:not(selector)	:not(p)	Selects every element that is not a <p> element
+:nth-child(n)	p:nth-child(2)	Selects every <p> element that is the second child of its parent
+:nth-last-child(n)	p:nth-last-child(2)	Selects every <p> element that is the second child of its parent, counting from the last child
+:nth-last-of-type(n)	p:nth-last-of-type(2)	Selects every <p> element that is the second <p> element of its parent, counting from the last child
+:nth-of-type(n)	p:nth-of-type(2)	Selects every <p> element that is the second <p> element of its parent
+:only-of-type	p:only-of-type	Selects every <p> element that is the only <p> element of its parent
+:only-child	p:only-child	Selects every <p> element that is the only child of its parent
+:optional	input:optional	Selects <input> elements with no "required" attribute
+:out-of-range	input:out-of-range	Selects <input> elements with a value outside a specified range
+:read-only	input:read-only	Selects <input> elements with a "readonly" attribute specified
+:read-write	input:read-write	Selects <input> elements with no "readonly" attribute
+:required	input:required	Selects <input> elements with a "required" attribute specified
+:root	root	Selects the document's root element
+:target	#news:target	Selects the current active #news element (clicked on a URL containing that anchor name)
+:valid	input:valid	Selects all <input> elements with a valid value
+:visited	a:visited	Selects all visited links
+ 
+ 
+*/
+
+q:lang(no) {
+  quotes: "~" "~XD";
+}
+
+/* Opacity :
+	
+
+*/
+img {
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+div {
+    background: rgba(76, 175, 80, 0.3) /* Green background with 30% opacity */
+}
+/*
+
+css attribute selector :
+	selecting elements with specific attributes
+selector[atribute] {
+
+}
+*/
+
+a[target] {
+ background-color: yellow;
+}
+a[target="_blank"] {
+ background-color: red;
+}
+/* [attribute~="value"] - used to select elements with an attribute valeu containg a specified word
+<style>
+[title~=flower] {
+    border: 5px solid yellow;
+}
+</style>
+
+<img src="klematis.jpg" title="klematis flower" width="150" height="113">
+<img src="img_flwr.gif" title="flower" width="224" height="162">
+<img src="img_tree.gif" title="tree" width="200" height="358">
+
+[attribute|="value"] - select with a starting value
+[class|=top] {
+    background: yellow;
+}
+</style>
+
+
+<h1 class="top-header">Welcome</h1>
+<p class="top-text">Hello world!</p>
+<p class="topcontent">Are you learning CSS?</p> <!-- wont show -->
+
+but for ^= will show -> value needs to contain specified word at the beginning
+
+$= value ends with specified value
+*= contains at the end
+*/
+
+/* counters  https://www.w3schools.com/css/css_counters.asp*/
+body {
+  counter-reset: section; /* creates or resets a counter*/
+}
+
+p:before {
+  counter-increment: section; /* increaments a content value*/
+  content: "Section " counter(section) " : " ; /* counter/counters add the value to an element*/
+}
+/*
+	CSS3 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+		latest standard for css
+			completely backwards-compatible with earlier versions of css
+*/
+/* Rounded corners */
+div {
+  border-radius: 64px;
+}
+/* Border images */
+#border-image {
+  border: 10px solid transparent;
+  padding: 15px;
+  -webkit-border-image: url(border.png) 30 round; /* Safari 3.1 - 5*/
+  -o-border-image: url(border.png) 30 round; /* Opera 11-12.1 */
+  border-image: url(border.png) 30 round; /* Round , stretch*/
+}
+
+/* Backgrounds */
+/* Multiple background images
+		stacked on top of each other, where the first is closest to the viewer
+*/
+
+#multiBackground {
+  background-image: url(image.gif), url(image2.gif);
+  background-position: right bottom, left top;
+  background-repeat: no-repeat, repeat;
+  /*shorthand*/
+  background: url(image.gif) right bottom no-repeat, url(image2.gif) left top repeat;
+}
+  /* contain and cover for background-size: 
+	Contain  - scales the backgroud image to be as large as possible ( but width and height 
+	have to fit the content area ) - as such there may be some areas not covered by bg image.
+	
+	Cover  - scales the bg image so that the content area i completely covered by bg image ( both width and height are equal or exceed the content area) - as such some pars may not be visible.
+  
+	To cover screen with our bg image fully we can do as follows
+  */
+#coverAll {
+  background: url(image.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+/*The CSS3 background-origin property specifies where the background image is positioned.*/
+#example1 {
+    border: 10px solid black;
+    padding: 35px;
+    background: url(img_flwr.gif);
+    background-repeat: no-repeat;
+    background-origin: content-box;
+}
+/*The CSS3 background-clip property specifies the painting area of the background.*/
+#example1 {
+    border: 10px dotted black;
+    padding: 35px;
+    background: yellow;
+    background-clip: content-box;
+}
+/*colors 
+rgb(a) - red green blue alpha
+hsl - hue saturation and lightness
+	1 hue - degree on the color wheel ( 0 - 360) 
+		0 red
+		120 green 
+		240 blue
+	2 saturation % value - 100% - full color
+	3 lightness - 0% dark ( black ) 100% white 
+https://stackoverflow.com/questions/26059228/css-hsl-or-rgba-colors
+
+hsla - hsl + alpha
+
+hex , rgb - machine readable first
+hsl - human readable first - not supported on older browsers - no rewriting the colour when making darker/lighter
+
+*/ 
+p {
+  background-color: hsl(120, 100%, 60%);
+}
+
+/* Linear and Radial gradient 
+
+linear - donw/up/left/right/diagonally
+radial   - defined by their center */
+
+#grad {
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, yellow); /* Standard syntax */
+}
+
+#grad-diag{
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, red, yellow); /* Standard syntax */
+}
+
+#grad2 {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(-90deg, red, yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(-90deg, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(-90deg, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(-90deg, red, yellow); /* Standard syntax */
+}
+
+#grad-multicolor {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(red, yellow, green); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(red, yellow, green); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(red, yellow, green); /* Standard syntax */
+}
+
+#grad-transparency {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left,rgba(255,0,0,0),rgba(255,0,0,1)); /*Safari 5.1-6*/
+  background: -o-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Opera 11.1-12*/
+  background: -moz-linear-gradient(right,rgba(255,0,0,0),rgba(255,0,0,1)); /*Fx 3.6-15*/
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1)); /*Standard*/
+}
+
+#grad-repeat{
+  background: red; /* For browsers that do not support gradients */
+  /* Safari 5.1 to 6.0 */
+  background: -webkit-repeating-linear-gradient(red, yellow 10%, green 20%);
+  /* Opera 11.1 to 12.0 */
+  background: -o-repeating-linear-gradient(red, yellow 10%, green 20%);
+  /* Firefox 3.6 to 15 */
+  background: -moz-repeating-linear-gradient(red, yellow 10%, green 20%);
+  /* Standard syntax */
+  background: repeating-linear-gradient(red, yellow 10%, green 20%);
+}
+
+#grad-rad {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-radial-gradient(circle, red, yellow, green); /* Safari */
+  background: -o-radial-gradient(circle, red, yellow, green); /* Opera 11.6 to 12.0 */
+  background: -moz-radial-gradient(circle, red, yellow, green); /* Firefox 3.6 to 15 */
+  background: radial-gradient(circle, red, yellow, green); /* Standard syntax */
+}
+
+#grad-rad-repeat{
+  background: red; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+  background: -webkit-repeating-radial-gradient(red, yellow 10%, green 15%);
+  /* For Opera 11.6 to 12.0 */
+  background: -o-repeating-radial-gradient(red, yellow 10%, green 15%);
+  /* For Firefox 3.6 to 15 */
+  background: -moz-repeating-radial-gradient(red, yellow 10%, green 15%);
+  /* Standard syntax */
+  background: repeating-radial-gradient(red, yellow 10%, green 15%);
+}
+
+/* Text-shadow + box-shadow */
+h1 {
+    text-shadow: 2px 2px; /*horizontal and vertical shadow (blur effect and color)*/
+}
+
+h2 {
+  text-shadow: 4px 1px 5px red;
+}
+
+h3 {
+    text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+
+h4 {
+    color: yellow;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+div {
+  box-shadow: 5px 5px 10px gray;/*horizontal and vertical shadow (blur effect and color)*/
+}
+/* tricks */
+p {
+    position: relative;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, .5);
+    padding: 10px;
+    background: white;
+}
+
+p img {
+    width: 100%;
+    border: 1px solid #8a4419;
+    border-style: inset;
+}
+
+p::after {
+    content: '';
+    position: absolute;
+    z-index: -1; /* hide shadow behind image */
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3); 
+    width: 80%; 
+    left: 10%; /* one half of the remaining 30% */
+    height: 100px;
+    bottom: 0;
+}
+/*fonts https://www.w3schools.com/css/css3_fonts.asp
+ ttf/otf and woof are safest - but still woof is the safest
+*/
+
+@font-face {
+  font-family: ralewayMyName;
+  src: url(font.woff);
+}
+#di {
+ font-family: ralewayMyName;
+}
+
+/* 2d Transformation 
+	transalte
+	rotate
+	scales
+	skewX
+	skewY
+	matrix
+*/
+
+div:hover {
+  -ms-transform: translate(50px, 100px);/* IE 9 */
+  -webkit-transform: translate(50px, 100px); /* Safari */
+  transform: translate(50px, 100px);
+}
+
+div:hover {
+  -ms-transform: rotate(20deg);/* -20deg -> counterclocwise*/
+  -webkit-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+
+div:hover {
+    -ms-transform: scale(1, 2); /* IE 9  width and height*/
+    -webkit-transform: scale(1, 2); /* Safari */
+    transform: scale(1, 2);
+}
+
+div:hover {
+  -ms-transform: skewX(20deg); /* IE 9 */
+    -webkit-transform: skewX(20deg); /* Safari */
+    transform: skewX(20deg);
+}
+
+div:hover {
+ -ms-transform: skewY(20deg); /* IE 9 */
+    -webkit-transform: skewY(20deg); /* Safari */
+    transform: skewY(20deg);
+}
+
+div:hover {
+-ms-transform: skew(20deg, 10deg); /* IE 9 */
+    -webkit-transform: skew(20deg, 10deg); /* Safari */
+    transform: skew(20deg, 10deg);
+}
+
+div:hover { /* scalex, skewy, skewx, scale y , translatex, translate y*/
+-ms-transform: matrix(1, -0.3, 0, 1, 0, 0); /* IE 9 */
+    -webkit-transform: matrix(1, -0.3, 0, 1, 0, 0); /* Safari */
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+}
+
+/* 3d TRANSFORM */
+div:hover {
+    -webkit-transform: rotateX(150deg); /* Safari */
+    transform: rotateX(150deg);
+}
+
+div:hover {
+    -webkit-transform: rotateY(130deg); /* Safari */
+    transform: rotateY(130deg);
+}
+
+div:hover {
+    -webkit-transform: rotateZ(90deg); /* Safari */
+    transform: rotateZ(90deg);
+}
+/* transition - transform + duration*/
+p {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+	/* 
+	-webkit-transition: width 2s, height 4s;  Safari 
+    transition: width 2s, height 4s;*/
+}
+p:hover {
+  width: 500px;
+}
+
+/* Curve of transition 
+	ease - slow start - fast - end slowly  ) default (
+	linear - same speed from start to end 
+	ease-in - slow start
+	ease-out - slow end
+	ease-in-out - slow start and end
+	cubic-bezier(n,n,n,n) - define own cubic bezier function
+	
+	
+	Delay :
+	
+	 -webkit-transition-delay: 1s;  Safari 
+    transition-delay: 1s;
+
+	Transition + Transformation
+	
+	  -webkit-transition: width 2s, height 2s, -webkit-transform 2s;  Safari 
+    transition: width 2s, height 2s, transform 2s;
+*/
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+
+/* Animations 
+	@keyframews rules -
+		from animation to another
+*/
+
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;} /* we can use % */
+}
+
+@keyframes example2 {
+    0%   {background-color: red;}
+    25%  {background-color: yellow;}
+    50%  {background-color: blue;}
+    100% {background-color: green;}
+}
+
+@keyframes example3 {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+
+/* The element to apply the animation to */
+h1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example3;
+    animation-duration: 4s; /* default value - 0 */
+}
+
+
+h2{
+    width: 100px;
+    height: 100px;
+    position: relative;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: 3; /* can be infinite */
+	animation-direction: reverse;
+}
+
+/* Responsive images */
+img.responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+img.center {
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+/* polaroid unages.cards */
+div.polaroid {
+    width: 80%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+img {width: 100%}
+/* OTHER https://www.w3schools.com/css/css3_images.asp*/
+div.container {
+    text-align: center;
+    padding: 10px 20px;
+}
+/* pagination https://www.w3schools.com/css/css3_pagination.asp */
+
+/*
+CSS3 Multi-column Properties
+In this chapter you will learn about the following multi-column properties:
+
+column-count
+column-gap
+column-rule-style
+column-rule-width
+column-rule-color
+column-rule
+column-span
+column-width
+
+
+	and some more
+
+*/
