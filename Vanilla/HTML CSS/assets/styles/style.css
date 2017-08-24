@@ -1,166 +1,164 @@
 body {
-  background-color: hsla(41, 100%, 84%, 1);
   margin: 0;
+  background: #000; 
 }
-/* https://medium.com/@PatrykZabielski/how-to-make-multi-layered-parallax-illustration-with-css-javascript-2b56883c3f27
- */
-.header-wrapper {
-  height: 80vh;
+
+* { font-family: Tahoma, Geneva, sans-serif; }
+
+header {
+  width: 100%;
+  height: 80px;
+}
+nav {
+  width: 75%;
+  height: 50px;
+  float: left;
+}
+.container {
+  width: 100%;
+}
+/* https://cognitohq.com/ */
+/* https://www.themelocation.com/best-html5-practices/ */
+section {
+  width: 20%;
+  height: 500px;
+  float: left;
+}
+main {
+  width: 65%;
+  height: 500px;
+  float: right;
+}
+aside {
+  height: 500px;
+  display: none;
+}
+
+/*************************
+******  Header  **********
+**************************
+		Logo
+*************************/
+#logo-holder {
+  height: 80px;
+  width: 160px;
+  float: left;
+  margin-left: 20px;
+}
+  #logo-holder img {
+    height: 80px;
+  }
+/************************
+		Navbar
+************************/
+header nav {
+  height: 80px;
+  border-left: 1px solid black;
+  text-align: right;
+}
+  header nav a {
+    line-height: 5em;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-right: 10px;
+	color: #fff;
+	font-size: 1em;
+  }
+  header nav a:last-child {
+    margin-right: 20px;
+  }
+/************************
+***  Banner Header  *****
+************************/
+#header-banner {
+  height: 500px;
+  width: 100%;
+}
+/* https://codepen.io/tribex/pen/mWNWdz */
+#header-banner {
+  perspective: 2px;
+  height: 500px;
   overflow-x: hidden;
   overflow-y: auto;
-  -webkit-perspective: 300px;
-  perspective: 300px;
 }
-.header-wrapper .parallax-group {
-  position: relative;
-  height: 80vh;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-.header-wrapper .parallax-group .parallax_layer {
+#header-banner > div {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
+}
+.banner-bg {
+  transform: translateZ(0);
+  background-image: url(../images/background_1.jpeg);
+  background-size: cover;
+  background-position-y: -150px;
+  -moz-box-shadow: inset 0 5px 10px #000000;
+  -webkit-box-shadow: inset 0 5px 10px #000000;
+  box-shadow: inset 0 5px 10px #000000;
+  background-attachment: fixed;
+}
+.banner-bg--middle{
+  transform: translateZ(-2px) scale(1);;
+  background-image: url(../images/background_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+.banner-bg--front {
+  display: none;
+  transform: translateZ(-5px);
+  background-image: url(../images/background_2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/************************
+		Content
+************************/
+.container-wrapper {
+ /*  background: -webkit-linear-gradient(-427deg, #000000 0, #493d19 50%, #d3a20e 100%);
+  background: linear-gradient(157deg, #000000 0, #493d19 50%, #d3a20e 100%); */
+  min-height: 500px;
+  background: #000;
+  margin-bottom: 100px;
+}
+  .container-wrapper .container {
+	margin-top: 50px;
+  }
+
+section,
+main {
+  padding: 10px 15px;
+  background: #fff;
+  margin: 10px;
 }
 
-/* https://codepen.io/nadiarasul/pen/zqLVpZ?editors=1100 */
-
- /* Parallax base styles
-  --------------------------------------------- */
-
-  .parallax {
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-perspective: 300px;
-    perspective: 300px;  
-  }
-
-  .parallax__group {
-    position: relative;
-    height: 100vh;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-  }
-
-  .parallax__layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  .parallax__layer--fore {
-    -webkit-transform: translateZ(90px) scale(.7);
-    transform: translateZ(90px) scale(.7);
-    z-index: 1;
-  }
-
-  .parallax__layer--base {
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    z-index: 4;
-  }
-
-  .parallax__layer--back {
-    -webkit-transform: translateZ(-300px) scale(2);
-    transform: translateZ(-300px) scale(2);
-    z-index: 3;
-  }
-
-  .parallax__layer--deep {
-    -webkit-transform: translateZ(-600px) scale(3);
-    transform: translateZ(-600px) scale(3);
-    z-index: 2;
-  }
-
-/* body styles */
-
-  body, html {
-    overflow: hidden;
-  }
-
-  body {
-    font: 100% Arial;
-  }
-
-  * {
-    margin:0;
-    padding:0;
-  }
-
-  .parallax {
-    font-size: 200%;
-  }
-
-
-  /* style the groups
-  --------------------------------------------- */
-
-  #group1 {
-    z-index: 5; /* slide over group 2 */
+/************************
+		Temporary
+************************/
+.container {
+  margin: 0 auto;
+  max-width: 980px;
+}
+.container-full {
+  margin: 0 auto;
+}
+/************************
+		Footer
+************************/
+footer {
+  background: #000;
+  width: 100%;
+  min-height: 100px;
+}
+  footer p {
+    color: #fff;
+    margin: 0;
   }
   
-  .group1_green {
-    position: absolute;
-    top:40%;
-    right:-10%;
-  }
-  #group2 {
-    z-index: 3; /* slide under groups 1 and 3 */
-  }
-
-  .group2_orange {
-    position: absolute;
-    left:5%;
-  }
-  .group2_yellow {
-     position: absolute;
-    top:56%;
-    right:26%;  
-  }
-
-  #group3 {
-    z-index: 4; /* slide over group 2 and 4 */
-  }
-  .group3_blueSmall {
-    position: absolute;
-    top:45%;
-    left:65%; 
-  }
-
-  .group3_red {
-    position: absolute;
-    top:80%;
-    left:42%;
-  }
-
-  #group4 {
-    z-index: 2; /* slide under group 3 and 5 */
-  }
-
-  .group4_orange {
-    position: absolute;
-    top:80%;
-    left:48%;
-  }
-
-  .group4_green {
-    position: absolute;
-    top:55%;
-    left:20%;
-  }
-
-  .credits {
-    position: absolute;
-    z-index:100;
-    bottom: 0vh;
-    top: auto;
-    font-size:80%;
-    text-align:center;
-    width: 100%;
-    background: white;
-  }
+  
