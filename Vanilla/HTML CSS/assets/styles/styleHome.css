@@ -1,0 +1,161 @@
+* { font-family: "Lucida Console", Monaco, monospace;}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #ddd;
+}
+
+header {
+  width: 100%;
+  background: url(../images/stars.jpg);
+}
+
+#logo-holder img {
+  height: 100px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+#logo-holder h1 {
+  color: white;
+}
+
+.container {
+  margin: 2% auto;
+  max-width: 1280px;
+}
+.container:first-child {
+  margin-top: 0;
+}
+.container:last-child {
+  margin-bottom: 0;
+} 
+
+
+/* https://www.w3.org/wiki/Floats_and_clearing */
+.content-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  margin: 25px 0;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.27);
+}
+.content-item:first-child {
+  margin-top: 50px;
+}
+  .content-item .content {
+    min-height: 250px;
+	background: #ddd;
+	border: 1px solid #eee;
+	padding: 20px;
+	
+	-webkit-box-shadow: inset 7px -9px 5px -5px rgba(0,0,0,0.4),inset -7px 7px 5px -5px rgba(0,0,0,0.27);
+	-moz-box-shadow: inset 7px -9px 5px -5px rgba(0,0,0,0.4), inset -7px 7px 5px -5px rgba(0,0,0,0.27);
+	box-shadow: inset 7px -9px 5px -5px rgba(0,0,0,0.4), inset -7px 7px 5px -5px rgba(0,0,0,0.27);
+	
+  }
+  .content-head h2 {
+    text-transform: uppercase;
+  }
+  .content-image {
+    width: 360px;
+	margin: 0;
+  }
+    .content-image img {
+	  width: 360px;
+	  height: 200px;
+	}
+  .content-body {
+  }
+  .content-footer {
+    width: 100%;
+  }
+
+
+
+
+
+footer {
+  background: #000;
+  min-height: 100px;
+}
+  footer p {
+    margin: 0;
+  }
+
+
+
+
+/*
+<!-- Site Info 
+https://www.awwwards.com/50-awesome-websites-with-extraordinary-geometry-elements.html
+-->
+
+<!-- https://codepen.io/danielpox/pen/qRVMvd?page=5 -->
+<!-- https://codepen.io/herbertfj/pen/vxcJe?page=3 -->
+<!-- http://materializecss.com/parallax.html -->
+<!-- http://www.firewatchgame.com/ -->
+<!-- https://codepen.io/search/pens?q=angled+edge&limit=all&type=type-pens -->
+<!-- https://codepen.io/search/pens/?limit=all&page=2&q=css+animation -->
+<!-- https://codepen.io/alissalikavec/pen/rjCol?page=15 -->
+<!-- https://codepen.io/search/pens/?limit=all&page=6&q=css+only -->
+<!-- https://codepen.io/eva_trostlos/pen/akQoLN?limit=all&page=2&q=css+only -->
+
+<html>
+<!-- <head> -->
+  <title>CSS only site</title>
+
+  <meta charset="UTF-8" />
+  <meta name="description" content="Site created with css and html only." />
+  <meta name="keywords" content="HTML, CSS" />
+  <meta name="author" content="Grzegorz Trzeciak" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="shortcut icon" type="image/x-cion" href="assets/images/favicon.ico" />
+  <link rel="stylesheet" href="assets/styles/styleHome.css" />
+  
+<!-- </head>  -->
+<body>
+<header>
+<!-- header banner and navigation -->
+  <div class="header-wrapper <!-- parallax -->">
+    <nav>
+	  <div id="logo-holder">
+	    <a href="home.html" alt="logo.jpeg"><img src="assets/images/logo.jpg"/></a>
+	  </div>
+	  <div id="nav-links">
+		<a href="/html/" class="uppercase">About</a>
+		<a href="/css/" class="uppercase">Gallery</a>
+		<a href="/css/" class="uppercase">News</a>
+		<a href="/js/" class="uppercase">Contact</a>
+	  </div>
+    </nav>
+    <div id="parallax">
+      <div class="parallax-background">
+	  </div>
+	  <div class="parallax-middleground">
+	  </div>
+	  <div class="parallax-foreground">
+	  </div>
+	</div>
+	<div class="bottom-wrapper"></div>
+  </div>
+</header>
+<!-- container -->
+  <div id="container">
+    <div class="row">
+	  <div class="col-4">
+	    <p>Lorem ipsum </p>
+	  </div>
+	  <div class="col-8">
+	    <p>Lorem ipsum </p>
+	  </div>
+	</div>
+  </div>
+<footer>
+<!-- footer section -->
+</footer>
+</body>
+</html>
+
+*/
