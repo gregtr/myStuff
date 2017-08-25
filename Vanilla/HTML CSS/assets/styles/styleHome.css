@@ -71,10 +71,6 @@ header {
     width: 100%;
   }
 
-
-
-
-
 footer {
   background: #000;
   min-height: 100px;
@@ -82,10 +78,406 @@ footer {
   footer p {
     margin: 0;
   }
+/***** CSS TUTORIAL CONTENT *****/
+/* 
+	Box-model 
+	margin-(outline)-border-padding-content
+	
+	width: only size of content area
+	outline is not a part of an elements dimensions  - the elements total width and height is not affected by the width ot the outline
+	
+	Cascading order by priority:
+		1. inline style - inside a html element
+		2. 
+*/
+.css-content {}
+.css-content .test-box { width: 200px; height:200px; border:1px solid #eee;}
+/* Background properies : order as in shorthand 
+	background-color
+	background-image 
+	background-repeat
+	background-attachment
+	background-position
+*/
+.css-content #backgroundProperties .test-box {
+  background-color: #ddff22;
+  background-image: url(../../content/images/favicon.ico);
+  background-repeat: repeat-x;
+  background-position: right top;
+  background-attachment: fixed;
+  /* background: #ddff22 url(../../content/images/favicon.ico) repeat-x right top; */
+}
+/* Border properties 
+	dotted - dotted border
+	dashed - dashed border
+	solid  - solid border
+	double - double border
+	groove - 3d groved border - effect depends on border color value
+	ridge  - 3d ridge border - -//-
+	inset  - 3d inset border - -//-
+	outset - 3d outset border - -//- 
+	nonce  - no border
+	hidden - hidden border 
+	
+	It can have from 1 to 4 values ( top , right, bottom and left border )
+	
+	Properties:
+	 border-width
+	 border-style (required)
+	 border-color 
+*/
+.css-content #borderProperties .test-box {
+  border-style: inset;
+  border-width: medium; /* default */
+  border-color: yellow;
+  border-right-color: orange;
+  /* border: 1px solid gray; */
+  border-radius: 32px; /* not supported in ie8 and earlier */
+}
+/* Margin 
+ used to generate space around elements
+ auto - takes specific width and remaining space is equally divided between left and right
+ inherit - inherit from the parent
+*/
+.css-content #cssMargins .test-box {
+  margin: 5px 5px 5px 5px;
+  margin: 5px;
+  margin-left: 100px;
+  background: gray;
+}
+/* Padding 
+ space around content - clears area around the conntent ( inside the border ) of an element. Can't be negative value.
+*/
+.css-content #cssPadding .test-box {
+  padding: 5px 5px 5px 5px;
+  padding: 5px;
+  padding-left: 100px;
+  background: gray;
+}
+
+/* Width & Height 
+  by-default it's set to auto
+  it can take values as cm, px, %-of container etc.
+  
+  max-width/max-height - set's a maximum width/height of an element - it's specified in length values of % - by default it's none
+  
+  on div {width:500px} it will add a scrollbar - on mobiles to avoid that we can set our max width to 500px;
+*/
+.css-content #cssHeightWidth .test-box {
+  width: 500px;
+  height: 1500px;
+  max-height: 150px;
+}
+
+/* Outline-style
+ same as border values
+ outline-width: default medium;
+*/
+.css-content #cssOutline .test-box {
+  border-width: 10px;
+  border-color: white;
+  outline-style: solid; 
+  outline-color: yellow;
+  outline-width: 12px;
+}
+/**
+Text formatting - play with those!!!
+ color: red/hex/rgb - for w3c compilant css if we define color we need to define background-color
+ text-align - left/right/centered/justified
+ text-decoration: none, overline, line-through, underline
+ text-transformation: uppercase, lowercase, capitalize
+ text-indentation: length-value - specifyt the indentation of the first line of a text
+ letter-spacing: length-value 
+ line-height: length-value
+ direction - rtl - for text direction
+ word-spacing: length-value
+ text-shadow ( horizontal shadow) (vertical shadow position) color:
+ text-overflow - *clip/ellipsis/string/initial/inherit
+ unicode-bidi - normal /embed/ bidi-override / initial/inherit - used with direction - to set or return whether the text should be overriden to support mulitple languages in same document
+ 
+ vertical-align - baseline/length/&/sub/super/top/text-top/middle/bottom/text-bottom/initial/inherit
+ 
+ white-space -normal/nowrap/pre/pre-line/pre-wrap/initial/inherit
+ 
+ word-spacing - normal, length/initial / inherit
+
+*/
+.css-content #textTransform .test-box {
+  text-align: right;
+  text-decoration:line-through;
+  text-transform: capitalize;
+}
+
+/* CSS FONTS 
+  in css there are two types of font family names: generic family ( serif, monospace ) and font-family - a specific font family like "arial" - btw. monospace characters have the same width - and sans means without 
+
+  font- only exists on a computer - refers to the computer software file which contains information regarding the display and output of a typeface.
+  
+  fontface - the face of the type family. for example bold or itealic are face where as helvetica would be the family.
+  
+  typeface - specific weight or instance of particular family ie bold italic oblique are all typefaces
+  
+  type family  - the design of all the characters comprised of a family and all its encompassing faces - helvetica is a type family.
+  */
+  
+/* font-size -
+  we shouldn't use font-size so our heading look like paragraphs and vice-versa - its not a good thing
+  
+  font-size can be absolute or relative size 
+	absolute is good when we want static size and we know the exact size of output
+	relative to surrounding elements - allows suer to change text size in browser
+	
+	default -> 16px = 1em
+	
+	en unit is recommended by w3c
+	rem is 10en
+	1em is equal to current font-size - the default font-size is 16px
+	pixels/16 = em
+	
+	IE has still some problems with em - its smaller than it should be and larger than we anticipate 
+*/
+body { font-size: 100%; }
+h1 { font-size: 2.5em; } /* works for all browsers */
+
+/* font-weight: normal/bold/values*/
+/* font-variant - specifies whether or not a text should be displayed in a small caps font- all smaller converted to uppercase but with smaller font than normal uppercase 
+       font-variant: small-caps;
+*/
+
+/* we can use font-awesome for icon lib - we add class to inline lement <i> or <span> in font awesom all icons are in scallable vectors - so we cna modify them ( same with google, and bootstrap icons ) */
+
+.css-content #cssLinks_ver1 a {
+  color: purple;
+}
+.css-content #cssLinks_ver1 a:link { /* normal univisited link */
+  color: white;
+  text-decoration: none;
+}
+.css-content #cssLinks_ver1 a:visited {
+  color: green;
+}
+.css-content #cssLinks_ver1 a:hover { /* Must come after link and visited */
+  color: blue;
+  text-decoration: underline;
+}
+.css-content #cssLinks_ver1 a:active { /*selected link - must come after hover */
+  color: red;
+  background-color: black;
+}
+
+/* CSS lists 
+  position the list item makers - list-style-position - specifies the list item markers should appear inside or outside the content flow 
+  
+  // to remove default settings :
+   list-style-position: none;
+   margin: 0;
+   padding: 0;
+
+*/
+.css-content ul {
+  list-style-position: inside;
+  /* shorthand */
+  /*list-style: suqare inside url("image-as-list-item-marker.png");*/
+}
+/* Display properies 
+  to hide element we can use display: none, page will be displayed with that element as it was not there.
+  visibility: hide also does the same thing but it will affect the layout - still will take as much space as it took...
+	its like :
+		display: none -> no element
+		visibility: hidden -> opacity 0
+		
+  block elements take full width available - but we can prevent that by adding width value manually, and margin auto to be on the center - margin will stratch to sides as far as it can 
+  
+  Position properties:
+    static 		-default -> are not affected by top/bottom/left/right properties and its position normally to the current page flow
+	relative
+	fixed
+	absolute
+	
+  Overflow: works only with block elements with specified height
+    visible - default - overflow is not clipped it renders outsidee the element's box
+	hidden  - overlow is clipped and rest of the content will be invisible
+	scroll  - overflow is hidden but scroll bar is add to so we can see rest of the content
+	auto    - if overflow is clipped - scrollbar should be added
+
+	
+	float: specifies whetehr or not an element should float
+	clear : property is used to control the behaviour of floating elements
+	
+		inline-block - creates a grid of boxes that fills the browser width and wraps nicely ( when the browser is resized) by using the float property 
+*/
+.css-content figure {
+  display: none;
+}
+
+.css-content #floatingBoxes .floating-box {
+  float: left;
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  border: 3px solid #000;
+}
+.css-content #floatingBoxes .after-box.test-box {
+  clear: left;
+}
+.css-content #floatingBoxes .floating-box-inlineExample {
+  display: inline-block;
+  width: 150px;
+  height: 75px;
+  margin: 10px;
+  border: 3px solid #000;
+}
+/*CSS Align */
+/** Center align elements - horizontally **/
+.css-content #cssAlign .test-box.center {
+  margin: auto;
+  width: 50%;
+  border: 1px solid white;
+  padding: 10px;
+  text-align: center;
+}
+/*
+img.center {
+  display: block;
+  margin: auto;
+  width: 40%;
+}
+*/
+.css-content #cssAlign .test-box.right {
+  position: absolute;
+  right: 0px;
+  width: 50%;
+  height: 50px;
+  padding: 5px;
+  background: rgba(0,0,0,.4);
+}
+
+/* center vertically using padding */
+.css-content #cssAlign .test-box.vertical {
+  padding: 70px 0;
+  height: auto;
+}
+/* center vertically using line-height */
+.css-content #cssAlign .test-box.vertical2 {
+  line-height: 200px;
+    height: 200px;
+    text-align: center;
+}
+/* center vertically - if the text has multiple lines */
+.css-content #cssAlign .test-box.vertical3 {
+    line-height: 200px;
+    height: 200px;
+    text-align: center;
+}
+.css-content #cssAlign .test-box.vertical3 p{
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Center vertically - using position & transform */
+.css-content #cssAlign .test-box.vertical4 {
+    height: 200px;
+    position: relative;
+}
+.css-content #cssAlign .test-box.vertical4 p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/** 
+	Combinators - something.... that explains the relationship between the selectors.
+	in CSS3
+		- desendant selector (space)
+		- child selector (>)
+		- adjacent sibling selector (+)
+		- general sibling selector (~)
+
+		1. Descendant selector - matches all elements that are descendants of a specified element.
+		2. Child selector - selects all elements that ar the immediate children of a specified element.
+		3. Adjacent sibling selector - selects all elements that are the adjacent siblings of a specified element. ( immediately following ) - they need to have same parent element
+		4.General sibling selector - selects all elements that are siblings of a specified element
+		
+div img { - kazdy img w div
+  background-color: #fff;
+}
+div > img { - img w div ale nie głębiej 
+  background-color: pink;
+}
+div + p { - first after div but not inside
+  background-color: lightgreen;
+}
+div ~ p { - all p after div but not inside
+  background-color: purple;
+}	
+		
+		
+**/
+
+/*
+ selector:pseudo-class {
+   property: value;
+ }
+ 
+ first child  - :first-child
+ 
+ lang pseudo class
+ - let us to define special rules for diff languages
+ 
+ pseudo-elemets : )
+ ::after	p::after	Insert content after every <p> element
+::before	p::before	Insert content before every <p> element
+::first-letter	p::first-letter	Selects the first letter of every <p> element
+::first-line	p::first-line	Selects the first line of every <p> element
+::selection	p::selection	Selects the portion of an element that is selected by a user
+ ----------------------
+ :active	a:active	Selects the active link
+:checked	input:checked	Selects every checked <input> element
+:disabled	input:disabled	Selects every disabled <input> element
+:empty	p:empty	Selects every <p> element that has no children
+:enabled	input:enabled	Selects every enabled <input> element
+:first-child	p:first-child	Selects every <p> elements that is the first child of its parent
+:first-of-type	p:first-of-type	Selects every <p> element that is the first <p> element of its parent
+:focus	input:focus	Selects the <input> element that has focus
+:hover	a:hover	Selects links on mouse over
+:in-range	input:in-range	Selects <input> elements with a value within a specified range
+:invalid	input:invalid	Selects all <input> elements with an invalid value
+:lang(language)	p:lang(it)	Selects every <p> element with a lang attribute value starting with "it"
+:last-child	p:last-child	Selects every <p> elements that is the last child of its parent
+:last-of-type	p:last-of-type	Selects every <p> element that is the last <p> element of its parent
+:link	a:link	Selects all unvisited links
+:not(selector)	:not(p)	Selects every element that is not a <p> element
+:nth-child(n)	p:nth-child(2)	Selects every <p> element that is the second child of its parent
+:nth-last-child(n)	p:nth-last-child(2)	Selects every <p> element that is the second child of its parent, counting from the last child
+:nth-last-of-type(n)	p:nth-last-of-type(2)	Selects every <p> element that is the second <p> element of its parent, counting from the last child
+:nth-of-type(n)	p:nth-of-type(2)	Selects every <p> element that is the second <p> element of its parent
+:only-of-type	p:only-of-type	Selects every <p> element that is the only <p> element of its parent
+:only-child	p:only-child	Selects every <p> element that is the only child of its parent
+:optional	input:optional	Selects <input> elements with no "required" attribute
+:out-of-range	input:out-of-range	Selects <input> elements with a value outside a specified range
+:read-only	input:read-only	Selects <input> elements with a "readonly" attribute specified
+:read-write	input:read-write	Selects <input> elements with no "readonly" attribute
+:required	input:required	Selects <input> elements with a "required" attribute specified
+:root	root	Selects the document's root element
+:target	#news:target	Selects the current active #news element (clicked on a URL containing that anchor name)
+:valid	input:valid	Selects all <input> elements with a valid value
+:visited	a:visited	Selects all visited links
+ 
+ 
+*/
 
 
+/**
+		Absolute position are removed from normal flow and can overlap elements
+		TIP: when aligning elements with position, always define margin and padding for the <body> element,. This is to avoid visual differences in different browsers.
+		
+		There is also problemwith IE8 and earlier versions  when using position - if a container element ( in our case <div class="container">) has a specified width, and the !DOCTYPE declaration is missing, IE8 and earlier versions will add a 17px margin on the right side. This seems to be space reserved for a scrollbar. So , always set the !DOCTYPE declaration when using position.
+**/
 
 
+/****** OTHER *********/
 /*
 <!-- Site Info 
 https://www.awwwards.com/50-awesome-websites-with-extraordinary-geometry-elements.html

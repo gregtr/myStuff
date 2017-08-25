@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <title>CSS only site</title>
-
+  <!-- todo: link do more info o danych elementach -->
   <meta charset="UTF-8" />
   <meta name="description" content="Site created with css and html only." />
   <meta name="keywords" content="HTML, CSS" />
@@ -19,8 +19,8 @@
 	  </div>
 	  <div id="nav-holder">
 	    <nav>
-		  <a href="#basics">Basics</a>
-		  <a href="#fonts">Fonts</a>
+		  <a href="#basics">HTML</a>
+		  <a href="#fonts">CSS</a>
 		  <a href="#backgrounds">Backgrounds</a>
 		  <a href="#animations">Hover&Animation</a>
 		  <a href="#more">More</a>
@@ -33,31 +33,618 @@
 	  <!-- Content Item -->
 	  <div class="content-item" id="basics">
 	    <div class="content-head">
-		  <h2>Basics - uncompromising truth</h2>
+		  <h2>Basics - HTML</h2>
 		</div>
 		<div class="content">
-		  <figure class="content-image">
-		    <img src="https://placeimg.com/360/200/tech" />
-		  </figure>
 		  <div class="content-body">
-		    <p>dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu dustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsudustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsu</p>
+		    <h1>Header 1</h1>
+		    <h2>Header 2</h2>
+		    <h3>Header 3</h3>
+		    <h4>Header 4</h4>
+		    <h5>Header 5</h5>
+		    <h6>Header 6</h6>
+		    <hr>
+			<p>&lt;hr&gt; - defines a thematic break a html page - horizontal rule.</p>
+			<p title="Tooltip message when hovered">Paragrapgh (hover over me)</p>
+			<a href="#">Link</a> <br><br>
+			<img src="https://placeimg.com/100/50/tech" alt="I'ma an image" width="100" height="50" />
+			<pre>
+Preformatted text,
+  prevents spaces and line break's.
+				.. It will display as it was typed in html file.
+			</pre>
+			<!--[if IE 9]>
+				<p>.... some HTML here ....</p>
+			<![endif]-->
+			<b>Bold - style</b><br><br>
+			<strong>Important text - indication of how something should be understood</strong><br><br>
+			<i>italic text</i><br><br>
+			<em>emphasized text</em><br><br>
+			<mark>marked text</mark><br><br>
+			<small>small text</small><br><br>
+			<del>deleted text</del><br><br>
+			<ins>inserted text</ins><br><br>
+			Word<sub>subscript</sub><br><br>
+			Word<sup>superscript</sup><br><br>
+			<q>quotation - short</q>
+			<blockquote cite="http://www.worldwildlife.org/who/index.html">
+				Block of quoted words with link to cited source in the tag.
+			</blockquote>
+			<abbr title="World Health Organization">WHO_abbrevation/acronym</abbr><br><br>
+			<address>
+				Writer Address<br>
+				Some more info<br>
+				02121312<br>
+				USAS<br>
+			</address>
+			<p><cite>The masacrator</cite> - by Me</p>
+			<bdo dir="rtl">From right to left. ->>> .tfel ot thgir morF</bdo><!-- bi-directional override -->
+			<hr>
+			<div id="image-map">
+			  <h3>Image maps - image with clickable areas</h3>
+			  <img src="https://placeimg.com/200/100/any" alt="Image map" usemap="#demoMap" style="width:200px; height:100px;" />
+			  <map name="demoMap">
+			    <area shape="rect" coords="0,0,145,30" alt="Sun" href="sun.htm">
+				<area shape="circle" coords="90,58,3" alt="Mercury" href="mercur.htm"><!-- size of 3 hieght and width -->
+				<area shape="circle" coords="124,58,8" alt="Venus" href="venus.htm">
+			  </map>
+			</div>
+			<hr>
+			<div id="tables">
+			  <h3>Table example</h3>
+			  <table style="width:100%;">
+			    <tr>
+				  <th>FirstRow</th>
+				  <th>SecondRow</th>
+				  <th>Third-Row - 2column-span</th>
+				</tr>
+				<tr>
+				  <td>A1</td>
+				  <td>B1</td>
+				  <td>C1</td>
+				  <td>D1</td>
+				</tr>
+				<tr>
+				  <td>A2</td>
+				  <td>B2</td>
+				  <td>C2</td>
+				</tr>
+			  </table>
+			  <br>
+			  <table style="width:100%;">
+			    <caption>Monthly Gates</caption>
+				<tr>
+				  <th>Name:</th>
+				  <td>Bill... Bill Monthly Gates</td>
+				</tr>
+				<tr>
+				  <th rowspan="2">Telephone:</th>
+				  <td>1241241241</td>
+				</tr>
+				<tr>
+				  <td>55577855</td>
+				</tr>
+			  </table>
+			</div>
+			<hr>
+			<div id="lists">
+			  <h3>Lists</h3>
+			  <h5>Unordered</h5>
+			  <ul>
+			    <li>Object A</li>
+			    <li>Object B</li>
+			    <li>Object C</li>
+			  </ul>
+			  <ul>
+			    <li>Object A</li>
+				  <ul>
+				    <li>Sub-Object A</li>
+				    <li>Sub-Object B</li>
+				  </ul>
+			    <li>Object B</li>
+			    <li>Object C</li>
+			  </ul>
+			
+			  <h5>Ordered</h5>
+			  <ol type="1"> <!-- Default -->
+				<li>Object A</li>
+				<li>Object B</li>
+				<li>Object C</li>
+			  </ol>
+		      <ol type="A"> 
+				<li>Object A</li>
+				<li>Object B</li>
+				<li>Object C</li>
+			  </ol>
+			  <ol type="a"> 
+				<li>Object A</li>
+				<li>Object B</li>
+				<li>Object C</li>
+			  </ol>
+			  <ol type="I"> 
+				<li>Object A</li>
+				<li>Object B</li>
+				<li>Object C</li>
+			  </ol>
+			  <ol type="i"> 
+				<li>Object A</li>
+			    <li>Object B</li>
+				<li>Object C</li>
+			  </ol>
+			  <h3>Description<sub> list of terms with description of each term.</sub></h3>
+			  <dl>
+				<dt>Coffee</dt>
+				<dd> - black hot cup of personality</dd>
+				<dt>Milk</dt>
+				<dd> - Cow;'s piss...</dd>
+				<dt>Night</dt>
+				<dd> - Time to work</dd>
+			  </dl>
+			</div>
+			<hr>
+			<div id="block-inline">
+			  <h3>Block and inline elements</h3>
+			  <p>Block level elements - always starts on a new line and take the full width available.</p>
+			  <p>Block elements:</p>
+			  <ul>
+			    <li>&lt;div&gt;</li>
+				<li>&lt;p&gt;</li>
+				<li>&lt;form&gt;</li>
+				<li>&lt;h1&gt; - &lt;h6&gt;</li>
+				<li>&lt;ul&gt; - &lt;ol&gt;</li>
+				<li>&lt;address&gt;</li>
+				<li>&lt;pre&gt;</li>
+				<li>&lt;blockquote&gt;</li>
+				<li>&lt;dl&gt;</li>
+				<li>&lt;fieldset&gt;</li>
+				<li>&lt;hr&gt;</li>
+				<li>&lt;noscript&gt;</li>
+				<li>&lt;table&gt;</li>
+			  </ul>
+			  <p>Inline examples:</p>
+			  <ul>
+			    <li>&lt;a&gt;</li>
+				<li>&lt;b&gt;</li>
+				<li>&lt;big&gt;</li>
+				<li>&lt;i&gt;</li>
+				<li>&lt;code&gt;</li>
+				<li>&lt;span&gt;</li>
+				<li>&lt;br&gt;</li>
+				<li>&lt;em&gt;</li>
+				<li>...</li>
+			  </ul>
+			</div>
+			<hr>
+			<div id="iframes">
+			  <h3>Iframes</h3>
+			  <p>For displaying page within a web page</p>
+			  <iframe src="hello.html"></iframe>
+			</div>
+			<hr>
+			<div id="other">
+			  <h3>Script Demo</h3>
+			  <p>Look into the code...</p>
+			  <div id="containerDiv">Nowalk text</div>
+			  <script>
+				document.getElementById("containerDiv").innerHTML = "Hello demo";
+			  </script>
+			  <noscript>Sorry, your browser does not support JavaScript!</noscript>
+			  <!--<div id="containerDiv"></div>  wont work cus script is invoked before this element -->
+			</div>
+			<hr>
+			<div id="pathing">
+			  <pre>
+file.png 		- is located in the same folder as the current page
+folder/file.png 	- is located in the images fodler located in the current page
+/folder/file.png 	- is located in the images folder located in the root of current web - recommended
+../file.png 		- is located in the folder on a level up from the current folder
+			  </pre>
+			</div>
+			<hr>
+			<div id="theory">
+			  <h3>Structure</h3>
+			  <pre>
+&lt;header&gt;  - defines a header for a document or a section
+&lt;nav&gt;     - defines a container for navigation links
+&lt;section&gt; - sefines a section in a document
+&lt;article&gt; - defines an independant self-contained article
+&lt;aside&gt;   - sidebar
+&lt;footer&gt;  - footer
+&lt;details&gt; - additional details
+&lt;summary&gt; - heading for the details element
+			  </pre>
+			</div>
+			<hr>
+			<div id="more-elements">
+			  <h3>Other elements</h3>
+			  <h5>Code</h5>
+			  <p>Display in browser - defauult monospace fonr</p>
+			  <code>
+			  x=5;<br>
+			  y=6;<br>
+			  z= x+y;<br>
+			  </code>
+			  <h5>Keyboard input - kbd</h5>
+			  <p>Some text and then <kbd>Ctrl+S</kbd> displayed in default monospace font</p>
+			  <h5>Output from a program or computer system - samp</h5>
+			  <samp>Output text</samp>
+			  <h5>Variable - var</h5>
+			  <var>Variable</var>
+			</div>
+			<hr>
+			<div id="form-info">
+			  <h3>Form</h3>
+			  <form action="/action_page.php" method="get" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+			  <!-- use post if sensitive information -->
+			    <input type="text" value="DefaultValue"><br>
+				<fieldset>
+				  <legend>Legend</legend>
+				  <input type="radio" name="nameEssentialForSubmit" value="Mouse" checked><br>
+				  <input type="radio" name="nameEssentialForSubmit2" value="Mouse2"><br>
+				</fieldset>
+				<select name="cars">
+				  <option value="volvo">Volvo</option><!-- by default first element is selected -->
+				  <option value="descardes">Descardes</option>
+				</select>
+				<textarea name="message" rows="10" cols="15">
+				  Just a textbox.
+				</textarea>
+				<button type="button" onclick="alert('Hello World!')">Clickable element!</button>
+				
+				<!-- HTML 5 form elements -->
+				<h5> HTML 5 form elements </h5>
+				<p>Datalist - element specifies a list of pre-defined options for an input element</p>
+				<input list="browsers">
+				<datalist id="browsers">
+				  <option value="val1">
+				  <option value="val2">
+				  <option value="val3">
+				  <option value="val4">
+				</datalist>
+				<p>Keygen - secure way to authenticate users - specifies a key-pair generator field in a form - when form is submitted two keys are generated - one private and second public. Private key is stored locally, public is sent to the server - public key could be used to generate a client certificate to authenticate the user in the future.</p>
+				Username: <input type="text" name="user">
+				Encryption: <keygen name="security">
+				<p>Output - result represneted by a calculation - like one performed by a script </p>
+				<input type="range" id="a" name="a" value="50">
+				<input type="number" id="b" name="b" value="50">
+				<output name="x" for"a b">100<output>
+				<br>
+				<input type="password" name="osw">
+				<h5>HTML input types</h5>
+					<!--color
+						date
+						datetime-local
+						email
+						month
+						number
+						range
+						search
+						tel
+						time
+						url
+						week-->
+				<input type="color" name="favcolor">
+			    <input type="date" name="bday">
+				<input type="date" name="bday" max="1979-12-31"><br>
+				<input type="datetime-local" name="bdaytime">
+				<input type="email" name="email">
+			    <input type="month" name="bdaymonth">
+				<input type="number" name="quantity" min="1" max="5">
+				<input type="range" name="points" min="0" max="10">
+				<input type="search" name="googlesearch">
+				  <!-- not in firefox -->
+				<input type="time" name="usr_time">
+				<input type="week" name="week_year">
+				<!-- not in safari -->
+				<input type="url" name="homepage">
+				  <!-- only safari -->
+				<input type="tel" name="usrtel">
+					 <!-- input attributes -->
+					 <!-- value, readonly disabled  size , maxlength-->
+					 <!-- HTML5 Attributes -->
+					 <!-- autocomplete
+					autofocus
+					form
+					formaction
+					formenctype
+					formmethod
+					formnovalidate
+					formtarget
+					height and width
+					list
+					min and max
+					multiple
+					pattern (regexp)
+					placeholder
+					required
+					step
+					and the following attributes for <form>:
+
+					autocomplete
+					novalidate 
+
+					TEST THEM https://www.w3schools.com/html/html_form_attributes.asp
+					 -->
+					<br><br>
+				<input type="reset">
+				<input type="submit" value="Submit"><br>
+			  </form>
+			</div>
+			<hr>
+			<div id="canvas">
+			  <h3>Canvas</h3>
+			  <p><b>Canvas</b> - rectangular area on html page - wuthout border and content on the start - draws 2d graphic on the fly - render pixel by pixel, once drawn it's turn to static ( svg is dynamic in that regard ) if image needs to be changed - entire scene needs to be redrawn.</p>
+			  <canvas id="myCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+			  <script>
+				var c = document.getElementById("myCanvas");
+				var ctx = c.getContext("2d");
+				ctx.beginPath();
+				ctx.arc(95,50,40,0,2*Math.PI);
+				ctx.stroke();
+			  </script>
+			  <p><b>Svg</b> - scalable vector graphics - describe 2d graphics in xml - every element is available in xml dom - we can attach handlers for an element via js, and all svg elements are objects.</p>
+			  <svg width="200" height="100" style="border:1px solid black;">
+			    <circle cx="100" cy="50" r="40" stroke="white" stroke-width="5" fill="black" />
+			  </svg>
+			</div>
+			<hr>
+			<div id="googleMaps_geolocation">
+			  <h3>Google Maps</h3>
+			  <div id="map" style="width:500px; height:500px;border:1px solid black;">Awesome Google Map</div>
+			  <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+			  <script>
+				function myMap() {
+					var mapOptions = {
+					  center: new google.maps.LatLng(51.5, -0.12),
+					  zoom: 10,
+					  mapTypeId: google.maps.MapTypeId.HYBRID
+					}
+					var map = new google.maps.Map(document.getElementById("map"),
+					mapOptions);
+				}
+			  </script>
+			  <h3>Geolocation</h3>
+			  <p>Is used to get geographical position of a user. Since it compromises privacy - user need's to grant permission - it's most accurate for devices with build GPS. ( on chrome 50. and aboce we need to use https).</p>
+			  <button onclick="getLocation()">Try It</button>
+
+			  <p id="demo"></p>
+			  <script>
+				  var x = document.getElementById("demo");
+				  function getLocation() {
+					if(navigator.geolocation) {
+					  navigator.geolocation.getCurrentPosition(showPosition, showError); /* error function is optional*/
+					} else {
+					  x.innerHTML = "Geolocation is not supported by this browser.";
+					}
+				  }
+				  function showPosition(position) {
+					x.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+				  }
+				  /* Handling errors and rejections */
+				  function showError(error) {
+					switch(error.code) {
+						case error.PERMISSION_DENIED:
+							x.innerHTML = "User denied the request for Geolocation."
+							break;
+						case error.POSITION_UNAVAILABLE:
+							x.innerHTML = "Location information is unavailable."
+							break;
+						case error.TIMEOUT:
+							x.innerHTML = "The request to get user location timed out."
+							break;
+						case error.UNKNOWN_ERROR:
+							x.innerHTML = "An unknown error occurred."
+							break;
+					}
+				}
+				  
+			  </script>
+			</div>
+			<hr>
+			<div id="Multimedia">
+			  <h3>Multimedia</h3>
+			  <p><b>Video formats:</b> mpeg, avi, wmv, quicktime, realvideo, flash, *ogg, *webm, mpeg-4, *mp4</p>
+			  <p><b>Audio formats:</b> midi, realaudio, wma, aac, *wav, *ogg, *mp3, mp4</p>
+			  <h5>Video</h5>
+			  <video width="320" height="250" style="border:1px solid black;" controls >
+			    <source src="movie.mp4" type="video/mp4">
+				<source src="movie.ogg" type="video/ogg">
+				Your browser does not support the video tag.
+			  </video>
+			  <h5>Audio</h5>
+			  <audio controls>
+				<source src="horse.ogg" type="audio/ogg">
+				<source src="horse.mp3" type="audio/mpeg">
+				Your browser does not support the audio element.
+			  </audio>
+			</div>
+			<hr>
+			<div id="helperPlugins">
+			  <h3>HTML helpers (Plug-ins)</h3>
+			  <p>Helper applications (plug-ins) are computer programs that extend the standard functionality of a web browser. Examples of well-known plug-ins are Java applets</p>
+			  <p>Plugins can be add to web pages with the object tag or the embed tag.</p>
+			  <br>
+			  <p>Object element is supported by all browsers, it defines an embeded object within an HTML document - it is used to embed plugin-s like Java applets, pdf Readers, flash players.<p>
+			  <br>
+			  <h5>Examples</h5>
+			  <object width="400" height="50" data="bookmark.swf"></object>
+			  <object width="100%" height="500px" data="snippet.html"></object>
+			  <object width="100%" height="500px" data="snippet.html"></object>
+			  <br>
+			  <p>The embed element is uspported by all major browsers - it also defines an embedded object within an html document.</p>
+			  <h5>Examples</h5>
+			  <embed width="400" height="50" src="bookmark.swf">Alt text </embed>
+			  <embed width="100%" height="500px" src="snippet.html">
+			  <embed src="audi.jpeg">
+			  <h4>Youtube videos</h4>
+			  <iframe width="420" height="300" src="https://www.youtube.com/embed/Dic-Kw1zlkc"></iframe>
+			</div>
+			<hr>
+			<div id="DragNDrop">
+			  <h3>Drag and drop</h3>
+			  <p>Draggin and dropping example</p>
+			  <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" style="width:350px; height: 70px; padding:10px; border:1px solid #aaa;"></div>
+			  <img id="drag1" src="content/images/HangingMan.png" draggable="true" ondragstart="drag(event)" width="60" height="60">
+			  <script>
+			  function allowDrop(ev) {
+					ev.preventDefault();
+				}
+
+				function drag(ev) {
+					ev.dataTransfer.setData("text", ev.target.id);
+				}
+
+				function drop(ev) {
+					ev.preventDefault();
+					var data = ev.dataTransfer.getData("text");
+					ev.target.appendChild(document.getElementById(data));
+				}
+			  </script>
+			</div>
+			<hr>
+			<div id="moreTheory">
+			  <h3>Local Storage and session Storage</h3>
+			  <p>Local storage - store data locally within user browser up to 5MB and info is never transferred to server and it's per origin - all pages can store on origin</p>
+			  <code>
+			    window.localStorage - no expiration date<br>
+				window.sessionStorage - one session ( until tab closed )
+			  </code>
+			  <h3>Web worker</h3>
+			  <p>- is a javascript that runs in the backgroun indepenently of other scripts, without affecting the performance of the page - we can continue to do other stuff.</p>
+			  <p>Count numbers: <output id="resultWorker"></output></p>
+			  <button onclick="startWorker()">Start Worker</button> 
+			  <button onclick="stopWorker()">Stop Worker</button>
+
+			  <p><strong>Note:</strong> Internet Explorer 9 and earlier versions do not support Web Workers.</p>
+			  <script>
+				var w;
+
+				function startWorker() {
+					if(typeof(Worker) !== "undefined") {
+						if(typeof(w) == "undefined") {
+							w = new Worker("demo_workers.js");
+						}
+						w.onmessage = function(event) {
+							document.getElementById("resultWorker").innerHTML = event.data;
+						};
+					} else {
+						document.getElementById("resultWorker").innerHTML = "Sorry, your browser does not support Web Workers...";
+					}
+				}
+
+				function stopWorker() { 
+					w.terminate();
+					w = undefined;
+				}
+			  </script>
+			</div>			
 		  </div>
 		</div>
 		<div class="content-foot">
-		  <p>Content footer</p>
+		  <p>For more information go to <a href="https://www.w3schools.com/html" target="_blank">www.w3school.com</a>.</p>
 		</div>
 	  </div>
 	  <!-- Content Item -->
-	  <div class="content-item" id="fonts">
+	  <div class="content-item css-content" id="fonts">
 	    <div class="content-head">
-		  <h2>Content Header</h2>
+		  <h2>CSS Basics</h2>
 		</div>
 		<div class="content">
 		  <figure class="content-image">
 		    <img src="https://placeimg.com/360/200/people" />
 		  </figure>
+		  <hr>
 		  <div class="content-body">
-		    <p>Content body</p>
+		    <div id="backgroundProperties">
+			  <h3>Background properties</h3>
+			  <div class="test-box"></div>
+			</div>
+			<hr>
+			<div id="borderProperties">
+			  <h3>Border properties</h3>
+			  <div class="test-box"></div>
+			</div>
+			<hr>
+			<div id="cssMargins">
+			  <h3>Margin</h3>
+			  <div class="test-box"></div>
+			</div>
+			<hr>
+			<div id="cssPadding">
+			  <h3>Padding</h3>
+			  <div class="test-box"></div>
+			</div>
+			<hr>
+			<div id="cssHeightWidth">
+			  <h3>Height&Width</h3>
+			  <div class="test-box"></div>
+			</div>
+			<hr>
+			<div id="cssOutline">
+			  <h3>Outline</h3>
+			  <div class="test-box"></div>
+			</div>
+			<hr>
+			<div id="textTransform">
+			  <h3>Text Transform</h3>
+			  <div class="test-box">Some text here</div>
+			</div>
+			<hr>
+			<div id="cssLinks_ver1">
+			  <h3>Link properties</h3>
+			  <div class="test-box"><a href="#">link</a></div>
+			</div>
+			<hr>
+			<div id="cssLists_ver1">
+			  <h3>Link properties</h3>
+			  <div class="test-box">
+			    <ul>
+				  <li>Object A</li>
+				  <li>Object B</li>
+				  <li>Object C</li>
+				</ul>
+			  </div>
+			</div>
+			<hr>
+			<div id="floatingBoxes">
+			  <h3>Floating boxes<h3>
+			  <h5>Old way</h5>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+			  <div class="floating-box">Floating box</div>
+
+			  <div class="after-box test-box">Another box, after the floating boxes...</div>
+			  <br>
+			  <h5>The future is now - old man!</h5>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+			  <div class="floating-box-inlineExample">Floating box</div>
+
+			  <div class="test-box">Another box, after the floating boxes...</div>
+			</div>
+			<hr>
+			<div id="cssAlign">
+			  <h3>CSS Align</h3>
+			  <div class="test-box center">Some text inside a div</div>
+			  <div class="test-box right">Some text inside a div</div>
+			  <div class="test-box vertical">Some text inside a div</div>
+			  <div class="test-box vertical2">Some text inside</div>
+			  <div class="test-box vertical3"><p>Some text inside a div Some more</p></div>
+			  <div class="test-box vertical4"><p>Some text inside a div Some more</p></div>
+			</div>
+			<hr>
 		  </div>
 		</div>
 		<div class="content-foot">
@@ -123,4 +710,5 @@
 	</div>
   </footer>
 </body>
+
 </html>
